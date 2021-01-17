@@ -6,26 +6,25 @@ The Below operations have been perfomed on the original data through the use of 
 #Step 1 : Merge the training and test data sets 
 
     #load the tidyverse package 
-    library(tidyverse)
-    
+        
     #read the X_train and X_test Data set as a fixed length variable  from the X_train.txt file 
-      X_train <-  read_fwf(".\\UCI_HAR_Dataset\\train\\X_train.txt", fwf_widths (c(rep(16, 561))))
+      X_train <-  read from the X_train.txt file 
       
-      X_test <-  read_fwf(".\\UCI_HAR_Dataset\\test\\X_test.txt", fwf_widths (c(rep(16, 561))) )
+      X_test <-  read from X_test.txt
     
     #read  all the train and test subjects data , then update the column headers for the dataframe
-      subject_train <- read_fwf(".\\UCI_HAR_Dataset\\train\\subject_train.txt", fwf_widths (c(1)))
-      subject_test <- read_fwf(".\\UCI_HAR_Dataset\\test\\subject_test.txt", fwf_widths (c(1)))
+      subject_train <- read from the subject_train.txt 
+      subject_test <- read from the subject_test.txt
     
-      subject_train <- subject_train %>% rename(subject  = X1)
-      subject_test <- subject_test %>% rename(subject  = X1)
+      subject_train <- rename the column header to meaningfull names 
+      subject_test <- rename the column header to meaningfull names 
     
     #read  activity labels and provide a column header 
-      Y_train <- read_fwf(".\\UCI_HAR_Dataset\\train\\y_train.txt", fwf_widths (c(1)))
-      Y_test <- read_fwf(".\\UCI_HAR_Dataset\\test\\y_test.txt", fwf_widths (c(1)))
+      Y_train <- read from y_train.txt
+      Y_test <- read from y_test.tx
       
-      Y_train <- Y_train %>% rename(activity = X1)
-      Y_test <- Y_test %>% rename(activity = X1)
+      Y_train <- rename the column header to meaningfull names 
+      Y_test <- rename the column header to meaningfull names 
       
     #read  variable names from the features.txt file 
       varNames <- read.delim(".\\UCI_HAR_Dataset\\features.txt", sep = " ", header = F)
